@@ -1,0 +1,12 @@
+{
+  "name": "db-run-migrations",
+  "version": "0.1.0",
+  "description": "Run db schema migrations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andy Bettisworth <andy@accreu.com> (https://andybettisworth.com/)",
+  "license": "MIT"
+}
