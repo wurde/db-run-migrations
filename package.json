@@ -6,10 +6,40 @@
   "scripts": {
     "test": "mocha --no-colors"
   },
-  "keywords": [],
+  "keywords": [
+    "db",
+    "task",
+    "script"
+  ],
+  "bin": {
+    "db_run_migrations": "./index.js"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.txt",
+    "CHANGELOG.md",
+    "index.js",
+    "test.js"
+  ],
   "author": "Andy Bettisworth <andy@accreu.com> (https://andybettisworth.com/)",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wurde/db-run-migrations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wurde/db-run-migrations/issues"
+  },
+  "homepage": "https://github.com/wurde/db-run-migrations#readme",
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "engines": {
+    "node": ">= 8"
   }
 }

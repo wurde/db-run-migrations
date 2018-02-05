@@ -12,10 +12,11 @@ Changes are categorized as follows:
 
 ## [Unreleased]
 
-* 2 minor enhancements:
+* 3 minor enhancements:
 
   * docs: expand the README
   * deps: add mocha
+  * docs: link repo and bug url
 
 ## 2018-02-04, Version 0.1.0 (unstable)
 
