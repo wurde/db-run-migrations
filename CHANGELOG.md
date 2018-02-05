@@ -12,11 +12,16 @@ Changes are categorized as follows:
 
 ## [Unreleased]
 
-* 3 minor enhancements:
+* 1 major enhancement:
+
+  * js: lookup db interface and run pending migrations
+
+* 4 minor enhancements:
 
   * docs: expand the README
   * deps: add mocha
   * docs: link repo and bug url
+  * deps: add schema-migrations
 
 ## 2018-02-04, Version 0.1.0 (unstable)
 

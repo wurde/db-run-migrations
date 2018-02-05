@@ -6,8 +6,8 @@
  * Dependencies
  */
 
-const path = require("path")
 const fs = require("fs")
+const path = require("path")
 
 /**
  * Constants
@@ -21,13 +21,14 @@ const index_js_path = path.join(base, 'index.js')
  * Locals
  */
 
-let main_script, app, db
+let main_script, app
+let has_config = fs.existsSync(package_json_path)
 
 /**
  * Set the main script to load
  */
 
-if (!fs.existsSync(package_json_path)) {
+if (has_config == false) {
   main_script = index_js_path
 } else {
   let config = JSON.parse(fs.readFileSync(package_json_path))
@@ -47,11 +48,12 @@ if (fs.existsSync(main_script)) {
   app = require(main_script)
 
   /**
-   * Get db interface
+   * Require the db interface
    */
 
-  if (!Object.keys(app.locals).includes('db')) { throw Error("Missing 'db' on app.locals {Object}."); return }
-  db = app.locals.db
+  if (!Object.keys(app.locals).includes('db')) {
+    throw Error("Missing 'db' on app.locals {Object}."); return
+  }
 
   /**
    * Require SchemaMigrations
@@ -63,7 +65,7 @@ if (fs.existsSync(main_script)) {
    * Run migrations
    */
 
-  let schema_migrations = new SchemaMigrations(base, db)
+  let schema_migrations = new SchemaMigrations(base, app.locals.db)
 
   schema_migrations.run()
     .catch((err) => {
